@@ -1,0 +1,7 @@
+#!/usr/bin/python3
+def no_c(my_string):
+    for c in my_string:
+        if c == 'c' or c == 'C':
+            new_string = my_string.replace(c, '')
+
+    return(new_string)
