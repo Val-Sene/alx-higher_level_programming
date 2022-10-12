@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+
+""" A class Square is defined here """
+
+
 class Square:
     """ Class Square that defines a square. """
 
@@ -22,12 +26,12 @@ class Square:
         return self.__size
 
     @size.setter
-    def size(self, size):
+    def size(self, value):
         """ Method to set the size value of the square object
         """
-        if not isinstance(size, int):
+        if not isinstance(value, int):
             raise TypeError("size must be an integer")
-        elif size < 0:
+        elif value < 0:
             raise ValueError("size must be >= 0")
         else:
-            self.__size = size
+            self.__size = value
