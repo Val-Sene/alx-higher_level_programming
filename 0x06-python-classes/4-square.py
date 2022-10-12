@@ -16,18 +16,18 @@ class Square:
         return (self.__size ** 2)
 
     @property
-    def get_size(self):
+    def size(self):
         """ Method to returns the size value
         """
         return self.__size
 
-    @get_size.setter
-    def set_size(self, value):
+    @size.setter
+    def size(self, size):
         """ Method to set the size value of the square object
         """
-        if not isinstance(value, int):
+        if not isinstance(size, int):
             raise TypeError("size must be an integer")
-        elif value < 0:
+        elif size < 0:
             raise ValueError("size must be >= 0")
         else:
-            self.__size = value
+            self.__size = size
