@@ -1,13 +1,7 @@
 #!/usr/bin/python3
-
-""" Class Square defines a sqaure by size
-"""
-
-
 class Square:
-    
-     """ Class Square that defines a square. """
-
+    """ A class that defines a square by its size
+    """
     def __init__(self, size=0):
         """ Method to initialize the square object
         """
