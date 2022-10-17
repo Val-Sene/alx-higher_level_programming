@@ -9,8 +9,8 @@ A class rectangle defined
 
 
 class Rectangle:
-
-    """ An empty class that defines a rectangle """
+    """ An class that defines a rectangle """
+    
     instances = 0
 
     def __init__(self, width=0, height=0):
