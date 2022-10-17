@@ -3,6 +3,7 @@ class Rectangle:
 
     """ An empty class that defines a rectangle """
     instances = 0
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         self.width = width
@@ -65,14 +66,13 @@ class Rectangle:
             return rectangle
 
         for i in range(self.height):
-            rectangle += ("#" * self.width) + "\n"
+            rectangle += (str(self.print_symbol) * self.width) + "\n"
 
         return rectangle[:-1]
 
     def __repr__(self):
         """ Method that returns the string representation of the instance
         """
-
         return "Rectangle({:d}, {:d})".format(self.width, self.height)
 
     def __del__(self):
@@ -80,3 +80,17 @@ class Rectangle:
         """
         Rectangle.instances -= 1
         print("Bye rectangle...")
+
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2):
+        """ Method returns big rectangle
+        """
+        if not isinstance(rect_1, Rectangle):
+            raise TypeError("rect_1 must be an instance of Rectangle")
+        if not isinstance(rect_2, Rectangle):
+            raise TypeError("rect_2 must be an instance of Rectangle")
+
+        if rect_1.area() >= rect_2.area():
+            return rect_1
+        else:
+            return rect_2
