@@ -1,3 +1,12 @@
+#!/usr/bin/python3
+"""
+
+
+A class rectangle defined
+
+
+"""
+
 
 class Rectangle:
 
