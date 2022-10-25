@@ -1,0 +1,10 @@
+The ``0-read_file`` module
+==========================
+
+Using ``read_file``
+------------------
+
+Importing function from mmodule:
+	>>> read_file = __import__(`0-read_file`).read_file
+
+
