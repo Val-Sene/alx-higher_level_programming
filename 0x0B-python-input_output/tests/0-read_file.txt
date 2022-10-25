@@ -6,5 +6,10 @@ Using ``read_file``
 
 Importing function from mmodule:
 	>>> read_file = __import__(`0-read_file`).read_file
-
+	
+Passing no file
+	>>> read_file()
+	Traceback (most recent call last):
+		...
+	FileNotFoundError: [Errno 2] No such file or directory: 'filename'
 
