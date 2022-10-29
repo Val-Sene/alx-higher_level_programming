@@ -2,7 +2,7 @@
 """ Module for class Rectangle """
 
 
-from base import Base
+from models.base import Base
 
 
 class Rectangle(Base):
@@ -26,8 +26,8 @@ class Rectangle(Base):
         """ Setting the width value """
         if not isinstance(int, value):
             raise TypeError("width must be an integer")
-        elif value < 0:
-            raise ValueError("width must be >= 0")
+        elif value <= 0:
+            raise ValueError("width must be > 0")
 
         self.__width = value
 
@@ -40,9 +40,9 @@ class Rectangle(Base):
     def height(self, value):
         """ Setting the height value """
         if not isinstance(int, value):
-            raise TypeError("width must be an integer")
-        elif value < 0:
-            raise ValueError("width must be >= 0")
+            raise TypeError("height must be an integer")
+        elif value <= 0:
+            raise ValueError("height must be > 0")
 
         self.__height = value
 
@@ -55,9 +55,9 @@ class Rectangle(Base):
     def x(self, value):
         """ Setting the x value """
         if not isinstance(int, value):
-            raise TypeError("width must be an integer")
+            raise TypeError("x must be an integer")
         elif value < 0:
-            raise ValueError("width must be an integer")
+            raise ValueError("x must be >= 0")
 
         self.__x = value
 
@@ -70,8 +70,12 @@ class Rectangle(Base):
     def y(self, value):
         """ Setting the y value """
         if not isinstance(int, value):
-            raise TypeError("width must be an integer")
+            raise TypeError("y must be an integer")
         elif value < 0:
-            raise ValueError("width must be >= 0")
+            raise ValueError("y must be >= 0")
 
         self.__y = value
+
+    def area(self):
+        """ Method returns the area of the rectangle object """
+        return self.width * self.height
