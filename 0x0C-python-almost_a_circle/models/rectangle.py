@@ -84,15 +84,12 @@ class Rectangle(Base):
         """ Method that prints a # rectangle according
         to the size of width and height value
         """
-        if not self.__width and self.__height:
-            print()
-        else:
-            print(" " * self.x)
-            print(self.y * "\n")
-            for i in range(self.__height):
-                for j in range(self.__width):
-                    print("#", end='')
-                print()
+        rectangle = self.y * "\n"
+        for i in range(self.height):
+            rectangle += (" " * self.x)
+            rectangle += ("#" * self.width) + "\n"
+
+        print(rectangle, end='')
 
     def __str__(self):
         """ """
@@ -102,4 +99,16 @@ class Rectangle(Base):
         fourth_part = "{}/{}".format(self.width, self.height)
 
         return first_part+ second_part+ third_part+ fourth_part
+
+    def update(self, *args):
+        """ """
+        for arg in range(len(args)):
+
+            self.id = args[0]
+            self.width = args[1]
+            self.height = args[2]
+            self.x = args[3]
+            self.y = args[4]
+
+
 
