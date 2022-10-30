@@ -100,15 +100,12 @@ class Rectangle(Base):
 
         return first_part+ second_part+ third_part+ fourth_part
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """ """
-        for arg in range(len(args)):
-
-            self.id = args[0]
-            self.width = args[1]
-            self.height = args[2]
-            self.x = args[3]
-            self.y = args[4]
-
-
-
+        if args is not None and len(args) is not 0:
+            attribute_list = ['id','width', 'height', 'x','y']
+            for i in range(len(args)):
+                setattr(self, attribute_list[i], args[i])
+            else:
+                for key, value in kwargs.items():
+                    setattr(self, key, value)
