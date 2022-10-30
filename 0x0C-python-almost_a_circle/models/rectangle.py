@@ -92,7 +92,7 @@ class Rectangle(Base):
         print(rectangle, end='')
 
     def __str__(self):
-        """ """
+        """ Displays a formated string of the rectangle """
         first_part = "[Rectangle] "
         second_part = "({}) ".format(self.id)
         third_part = "{}/{} - ".format(self.x, self.y)
@@ -101,8 +101,8 @@ class Rectangle(Base):
         return first_part+ second_part+ third_part+ fourth_part
 
     def update(self, *args, **kwargs):
-        """ """
-        if args is not None and len(args) is not 0:
+        """ Method takes both keyword/non-keyword arguments """
+        if args != None and len(args) != 0:
             attribute_list = ['id','width', 'height', 'x','y']
             for i in range(len(args)):
                 setattr(self, attribute_list[i], args[i])
