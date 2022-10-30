@@ -98,12 +98,12 @@ class Rectangle(Base):
         third_part = "{}/{} - ".format(self.x, self.y)
         fourth_part = "{}/{}".format(self.width, self.height)
 
-        return first_part+ second_part+ third_part+ fourth_part
+        return first_part + second_part + third_part + fourth_part
 
     def update(self, *args, **kwargs):
         """ Method takes both keyword/non-keyword arguments """
-        if args != None and len(args) != 0:
-            attribute_list = ['id','width', 'height', 'x','y']
+        if args is not None and len(args) != 0:
+            attribute_list = ['id', 'width', 'height', 'x', 'y']
             for i in range(len(args)):
                 setattr(self, attribute_list[i], args[i])
             else:

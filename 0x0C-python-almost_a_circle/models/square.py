@@ -32,4 +32,14 @@ class Square(Rectangle):
 
         return first_part+ second_part+ third_part+ fourth_part
     
+    def __str__(self):
+        """ A special string method """
+        str_rectangle = "[Square] "
+        str_id = "({}) ".format(self.id)
+        str_xy = "{}/{} - ".format(self.x, self.y)
+        str_size = "{}".format(self.size)
+
+        return str_rectangle + str_id + str_xy + str_size
+
+    
    
