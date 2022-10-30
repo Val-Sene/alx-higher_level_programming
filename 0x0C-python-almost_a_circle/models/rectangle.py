@@ -34,7 +34,7 @@ class Rectangle(Base):
     @property
     def height(self):
         """ Getting the height value """
-        return self.___height
+        return self.__height
 
     @height.setter
     def height(self, value):
@@ -87,6 +87,8 @@ class Rectangle(Base):
         if not self.__width and self.__height:
             print()
         else:
+            print(" " * self.x)
+            print(self.y * "\n")
             for i in range(self.__height):
                 for j in range(self.__width):
                     print("#", end='')
@@ -94,11 +96,10 @@ class Rectangle(Base):
 
     def __str__(self):
         """ """
-        full_string = ""
         first_part = "[Rectangle] "
-        second_part = "({})".format(self.id)
+        second_part = "({}) ".format(self.id)
         third_part = "{}/{} - ".format(self.x, self.y)
         fourth_part = "{}/{}".format(self.width, self.height)
 
-        return full_string += first_part+ second_part+ third_part+ fourth_part
+        return first_part+ second_part+ third_part+ fourth_part
 
